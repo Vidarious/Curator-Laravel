@@ -1,0 +1,15 @@
+{
+    "name": "curator/curator",
+    "description": "User management application for the Laravel framework.",
+    "authors": [
+        {
+            "name": "James Druhan",
+            "email": "jdruhan.home@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require":
+    {
+      "nesbot/carbon": "*"
+    }
+}
