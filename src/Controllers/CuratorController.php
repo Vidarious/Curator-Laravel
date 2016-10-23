@@ -1,5 +1,14 @@
 <?php
 
+/*
+|--------------------------------------------------------------------------
+| Curator: Controller
+|--------------------------------------------------------------------------
+|
+| This file defines Curator's Laravel controller.
+|
+*/
+
 namespace Curator\Curator\Controllers;
 
 use App\Http\Controllers\Controller;

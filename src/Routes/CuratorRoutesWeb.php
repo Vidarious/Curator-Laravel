@@ -2,10 +2,10 @@
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes: Curator
+| Curator: Web Routes
 |--------------------------------------------------------------------------
 |
-| This file defines Curator's routes.
+| This file defines Curator's Laravel routes.
 |
 */
 
