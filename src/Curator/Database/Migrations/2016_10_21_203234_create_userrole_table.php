@@ -19,6 +19,8 @@ class CreateUserRoleTable extends Migration
             $table->unsignedInteger('userID');
             $table->unsignedInteger('roleID');
 
+            $table->primary(['userID', 'roleID']);
+
             $table->foreign('userID')
                   ->references('userID')->on('User')
                   ->onDelete('no action')

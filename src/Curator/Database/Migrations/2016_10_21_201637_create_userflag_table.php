@@ -19,6 +19,8 @@ class CreateUserflagTable extends Migration
             $table->unsignedInteger('userID');
             $table->unsignedInteger('flagID');
 
+            $table->primary(['userID', 'flagID']);
+
             $table->foreign('userID')
                   ->references('userID')->on('User')
                   ->onDelete('no action')

@@ -16,7 +16,10 @@ class Flag extends Model
     //Flag belongsToMany User as defined by UserFlag with userID and flagID.
     public function users()
     {
-        return $this->belongsToMany('Curator\Models\User', 'UserFlag', 'flagID', 'userID');
+        return $this->belongsToMany('Curator\Models\User',
+                                    'UserFlag',
+                                    'flagID',
+                                    'userID');
     }
 
 

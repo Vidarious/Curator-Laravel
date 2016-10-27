@@ -21,10 +21,15 @@ class User extends Model
     //Use a specific table name.
     protected $table = 'User';
 
+    //Designate specific date columns.
+    protected $dates = ['created_at', 'updated_at'];
+
     //Relationship: Each user can have a single Status. One to many.
     public function status()
     {
-        return $this->belongsTo('Curator\Models\Status', 'statusID', 'statusID');
+        return $this->belongsTo('Curator\Models\Status',
+                                'statusID',
+                                'statusID');
     }
 
     //Relationship: Each user can have many activity logs. One to many.
@@ -37,19 +42,51 @@ class User extends Model
     //User belongsToMany Flag as defined by UserFlag with userID and flagID.
     public function flags()
     {
-        return $this->belongsToMany('Curator\Models\Flag', 'UserFlag', 'userID', 'flagID');
-    }
-/*
-    //Relationship: Each user can have many roles.
-    public function role()
-    {
-        return $this->hasMany('Role', 'userID');
+        return $this->belongsToMany('Curator\Models\Flag',
+                                    'UserFlag',
+                                    'userID',
+                                    'flagID');
     }
 
-    //Relationship: Each user can have many permissions.
-    public function permission()
+    //Relationship: Each user can have many roles. Many to many.
+    public function roles()
     {
-        return $this->hasMany('Permission', 'userID');
+        return $this->belongsToMany('Curator\Models\Role',
+                                    'UserRole',
+                                    'userID',
+                                    'roleID');
     }
-    */
+
+    //Relationship: Each user can have many permissions. Many to many.
+    public function permissions()
+    {
+        return $this->belongsToMany('Curator\Models\Permission',
+                                    'UserPermission',
+                                    'userID',
+                                    'permissionID');
+    }
+
+    //Mutator: Set the given name with all lowercase letters.
+    public function setGivenNameAttribute($value)
+    {
+        $this->attributes['givenName'] = strtolower($value);
+    }
+
+    //Accessor: Return a capitalized given name.
+    public function getGivenNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    //Mutator: Set the family name with all lowercase letters.
+    public function setFamilyNameAttribute($value)
+    {
+        $this->attributes['familyName'] = strtolower($value);
+    }
+
+    //Accessor: Return a capitalized family name.
+    public function getFamilyNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
 }

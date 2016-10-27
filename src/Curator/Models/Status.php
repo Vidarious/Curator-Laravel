@@ -24,6 +24,10 @@ class Status extends Model
     //Relationship: Connects Activities to Status's through the User table.
     public function activity()
     {
-        return $this->hasManyThrough('Curator\Models\Activity', 'Curator\Models\User', 'statusID', 'userID', 'statusID');
+        return $this->hasManyThrough('Curator\Models\Activity',
+                                    'Curator\Models\User',
+                                    'statusID',
+                                    'userID',
+                                    'statusID');
     }
 }

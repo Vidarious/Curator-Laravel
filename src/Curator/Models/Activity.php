@@ -18,9 +18,14 @@ class Activity extends Model
     //Use a specific table name.
     protected $table = 'Activity';
 
+    //Designate specific date columns.
+    protected $dates = ['created_on'];
+
     //Relationship: Each activity is assigned to one user. One to many.
     public function user()
     {
-        return $this->belongsTo('Curator\Models\User', 'userID', 'userID');
+        return $this->belongsTo('Curator\Models\User',
+                                'userID',
+                                'userID');
     }
 }

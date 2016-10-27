@@ -21,6 +21,8 @@ class UserTableSeeder extends Seeder
             'username'     => 'SysAdmin',
             'displayName'  => 'SysAdmin',
             'passwordHash' => Hash::make('password'),
+            'givenName'    => 'james',
+            'familyName'   => 'druhan',
             'email'        => 'admin@example.com',
             'statusID'     => $statusID,
             'created_at'   => Carbon::now()->format('Y-m-d H:i:s'),

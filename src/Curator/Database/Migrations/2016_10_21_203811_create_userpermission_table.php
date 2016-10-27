@@ -19,6 +19,8 @@ class CreateUserPermissionTable extends Migration
             $table->unsignedInteger('userID');
             $table->unsignedInteger('permissionID');
 
+            $table->primary(['userID', 'permissionID']);
+
             $table->foreign('userID')
                   ->references('userID')->on('User')
                   ->onDelete('no action')
