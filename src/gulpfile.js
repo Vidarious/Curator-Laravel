@@ -16,14 +16,14 @@ require('laravel-elixir-vue-2');
 elixir(mix => {
     //Location of SASS file relative to inside the package with the gulpfile.js.
     //The output (second param) should be the the Public directory of the package.
-    mix.sass('./Resources/assets/sass/mdb.scss', './Public/css');
+    mix.sass('./Curator/Resources/assets/sass/mdb.scss', './Public/css');
 
     //Copy Curator assets to respective public directories. The path is relative
     //to where the gulpfile.js is located. When installed with composer this is
     //typically: <Laravel Project Folder>/vendor/curator/curator/src/Public/
 
-    mix.copy('./Public/css', './../../../../public/css/vendor/curator');
-    mix.copy('./Public/img', './../../../../public/img/vendor/curator');
-    mix.copy('./Public/js', './../../../../public/js/vendor/curator');
-    mix.copy('./Public/font', './../../../../public/font/vendor/curator');
+    mix.copy('./Curator/Public/css', './../../../../public/css/vendor/curator');
+    mix.copy('./Curator/Public/img', './../../../../public/img/vendor/curator');
+    mix.copy('./Curator/Public/js', './../../../../public/js/vendor/curator');
+    mix.copy('./Curator/Public/font', './../../../../public/font/vendor/curator');
 });
